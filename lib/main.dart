@@ -1,17 +1,17 @@
+import 'package:dash_board/features/dash_board_feature/presentation/view/dash_board_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResponsiveDashBoard());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ResponsiveDashBoard extends StatelessWidget {
+  const ResponsiveDashBoard({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-    
+      home: DashBoardView(),
     );
   }
 }
