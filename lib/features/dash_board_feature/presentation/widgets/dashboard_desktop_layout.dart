@@ -9,7 +9,8 @@ class DashboardDesktopLayout extends StatelessWidget {
     return const Scaffold(
       body:  Row(
         children: [
-          Expanded(child: CustomDrawer())
+          Expanded(child: CustomDrawer()),
+          SizedBox(width: 32,),
         ],
       ),
     );
