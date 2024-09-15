@@ -1,6 +1,8 @@
-import 'package:dash_board/features/dash_board_feature/presentation/widgets/all_expenses.dart';
 import 'package:dash_board/features/dash_board_feature/presentation/widgets/custom_drawer.dart';
+import 'package:dash_board/features/dash_board_feature/presentation/widgets/my_card.dart';
 import 'package:flutter/material.dart';
+
+import 'tablet_layout.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -18,16 +20,12 @@ class DashboardDesktopLayout extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: Column(
-              children: [
-                Expanded(
-                  child: AllExpenses(),
-                ),
-              ],
-            ),
+            child: TabletLayout(),
           ),
+          Expanded(child: MyCard())
         ],
       ),
     );
   }
 }
+

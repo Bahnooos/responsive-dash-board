@@ -11,6 +11,7 @@ class AllExpenses extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomBackfroundContainer(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AllExpensiveHeader(),
           SizedBox(
