@@ -1,5 +1,6 @@
 import 'package:dash_board/features/dash_board_feature/presentation/widgets/custom_drawer.dart';
-import 'package:dash_board/features/dash_board_feature/presentation/widgets/my_card.dart';
+
+import 'package:dash_board/features/dash_board_feature/presentation/widgets/my_card_section.dart';
 import 'package:flutter/material.dart';
 
 import 'tablet_layout.dart';
@@ -22,10 +23,12 @@ class DashboardDesktopLayout extends StatelessWidget {
             flex: 2,
             child: TabletLayout(),
           ),
-          Expanded(child: MyCard())
+          SizedBox(
+            width: 24,
+          ),
+          Expanded(child: MyCardSection()),
         ],
       ),
     );
   }
 }
-
