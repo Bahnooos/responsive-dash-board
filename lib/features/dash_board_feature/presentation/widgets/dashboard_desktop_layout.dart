@@ -22,7 +22,10 @@ class DashboardDesktopLayout extends StatelessWidget {
           ),
           Expanded(
             flex: 3,
-            child: TabletLayout(),
+            child: Padding(
+              padding: EdgeInsets.only(top: 40),
+              child: TabletLayout(),
+            ),
           ),
           SizedBox(
             width: 24,
