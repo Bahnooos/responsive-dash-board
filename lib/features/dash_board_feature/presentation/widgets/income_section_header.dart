@@ -9,12 +9,12 @@ class IncomeSectionHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return   Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+        Text(
           'Income',
-          style: AppStyle.styleSemiBold20,
+          style: AppStyle.styleSemiBold20(context),
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
@@ -24,9 +24,9 @@ class IncomeSectionHeader extends StatelessWidget {
           )),
           child: Row(
             children: [
-              const Text(
+              Text(
                 'Monthly',
-                style: AppStyle.styleMedium16,
+                style: AppStyle.styleMedium16(context),
               ),
               Transform.rotate(
                   angle: -1.5708,

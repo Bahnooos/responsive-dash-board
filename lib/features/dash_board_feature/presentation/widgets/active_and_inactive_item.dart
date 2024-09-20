@@ -1,4 +1,3 @@
-
 import 'package:dash_board/features/dash_board_feature/presentation/models/drawer_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,9 +16,13 @@ class InActiveDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerItemModel.image),
-      title: Text(
-        drawerItemModel.title,
-        style: AppStyle.styleMedium16,
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: AlignmentDirectional.centerStart,
+        child: Text(
+          drawerItemModel.title,
+          style: AppStyle.styleMedium16(context),
+        ),
       ),
     );
   }
@@ -37,9 +40,13 @@ class ActiveDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerItemModel.image),
-      title: Text(
-        drawerItemModel.title,
-        style: AppStyle.styleBold16,
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: AlignmentDirectional.centerStart,
+        child: Text(
+          drawerItemModel.title,
+          style: AppStyle.styleBold16(context),
+        ),
       ),
       trailing: Container(
         width: 3.27,

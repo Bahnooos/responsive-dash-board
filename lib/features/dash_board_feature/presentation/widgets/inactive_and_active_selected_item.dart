@@ -22,16 +22,39 @@ class InActiveSelectedItem extends StatelessWidget {
             side: const BorderSide(width: 1, color: Color(0xFFF1F1F1)),
             borderRadius: BorderRadius.circular(12)),
       ),
-      child:  Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpensesItemHeader( image: itemModel.image,),
-         const SizedBox(height: 34,),
-         Text(itemModel.title,style: AppStyle.styleSemiBold16,),
-         const SizedBox(height: 8,),
-         Text(itemModel.date,style: AppStyle.styleRegular14,),
-         const SizedBox(height: 16,),
-         Text(itemModel.price,style: AppStyle.styleSemiBold24,),
+          AllExpensesItemHeader(
+            image: itemModel.image,
+          ),
+          const SizedBox(
+            height: 34,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.title,
+                style: AppStyle.styleSemiBold16(context),
+              )),
+          const SizedBox(
+            height: 8,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.date,
+                style: AppStyle.styleRegular14(context),
+              )),
+          const SizedBox(
+            height: 16,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.price,
+                style: AppStyle.styleSemiBold24(context),
+              )),
         ],
       ),
     );
@@ -51,21 +74,49 @@ class ActiveSelectedItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
-        color:const Color(0xff4EB7F2),
-        shape: RoundedRectangleBorder(
-          
-            borderRadius: BorderRadius.circular(12)),
+        color: const Color(0xff4EB7F2),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child:  Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpensesItemHeader( image: itemModel.image,),
-         const SizedBox(height: 34,),
-         Text(itemModel.title,style: AppStyle.styleSemiBold16.copyWith(color: Colors.white),),
-         const SizedBox(height: 8,),
-         Text(itemModel.date,style: AppStyle.styleRegular14.copyWith(color:const Color(0xffFAFAFA)),),
-         const SizedBox(height: 16,),
-         Text(itemModel.price,style: AppStyle.styleSemiBold24.copyWith(color: Colors.white),),
+          // ignore: deprecated_member_use
+          AllExpensesItemHeader(
+            image: itemModel.image,
+            // ignore: deprecated_member_use
+            imageBackground: Colors.white.withOpacity(0.10000000149011612),
+            imageColor: Colors.white,
+          ),
+          const SizedBox(
+            height: 34,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.title,
+                style: AppStyle.styleSemiBold16(context)
+                    .copyWith(color: Colors.white),
+              )),
+          const SizedBox(
+            height: 8,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.date,
+                style: AppStyle.styleRegular14(context)
+                    .copyWith(color: const Color(0xffFAFAFA)),
+              )),
+          const SizedBox(
+            height: 16,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.price,
+                style: AppStyle.styleSemiBold24(context)
+                    .copyWith(color: Colors.white),
+              )),
         ],
       ),
     );

@@ -22,9 +22,9 @@ class RangeOption extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Text(
+           Text(
             'Monthly',
-            style: AppStyle.styleMedium16,
+            style: AppStyle.styleMedium16(context),
           ),
           const SizedBox(
             width: 18,

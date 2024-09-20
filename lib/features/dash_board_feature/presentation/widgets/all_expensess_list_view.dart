@@ -7,73 +7,82 @@ import '../../../../core/utils/app_images.dart';
 class AllExpensessListView extends StatefulWidget {
   const AllExpensessListView({super.key});
 
-
   @override
   State<AllExpensessListView> createState() => _AllExpensessListViewState();
 }
 
 class _AllExpensessListViewState extends State<AllExpensessListView> {
-     final List<AllExpensesItemModel> items = [
-   const AllExpensesItemModel(
+  final List<AllExpensesItemModel> items = [
+    const AllExpensesItemModel(
         image: Assets.imagesBalance,
         title: 'Balance',
         date: 'April 2022',
         price: r'$20,129'),
-   const AllExpensesItemModel(
+    const AllExpensesItemModel(
         image: Assets.imagesIncome,
         title: 'Income',
         date: 'April 2022',
         price: r'$20,129'),
-   const AllExpensesItemModel(
+    const AllExpensesItemModel(
         image: Assets.imagesExpneses,
         title: 'Expenses',
         date: 'April 2022',
         price: r'$20,129'),
   ];
-  int selectedIndex=0;
-  
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
-        if (index == 1) {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: AllExpensesItem(
-                  isSelected: selectedIndex==index,
-                  itemModel: item,
-                ),
-              ),
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensesItem(
+              isSelected: selectedIndex == 0,
+              itemModel: items[0],
             ),
-          );
-        } else {
-          return Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  updateIndex(index);
-                },
-                child: AllExpensesItem(
-                            isSelected: selectedIndex==index,
-                            itemModel: item,
-                          ),
-              ));
-        }
-      }).toList(),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItem(
+              isSelected: selectedIndex == 1,
+              itemModel: items[1],
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItem(
+              isSelected: selectedIndex == 2,
+              itemModel: items[2],
+            ),
+          ),
+        ),
+      ],
     );
   }
-  
+
   void updateIndex(int index) {
-    if (selectedIndex!=index) {
-  setState(() {
-    selectedIndex=index;
-  });
-}
+    if (selectedIndex != index) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
   }
 }

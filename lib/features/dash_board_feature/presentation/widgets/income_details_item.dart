@@ -18,8 +18,8 @@ class IncomeDetailsItem extends StatelessWidget {
           shape: const OvalBorder(),
         ),
       ),
-      title:  Text(incomeItemModel.title, style: AppStyle.styleRegular16),
-      trailing:  Text(incomeItemModel.value, style: AppStyle.styleMedium16),
+      title:  Text(incomeItemModel.title, style: AppStyle.styleRegular16(context)),
+      trailing:  Text(incomeItemModel.value, style: AppStyle.styleMedium16(context)),
     );
   }
 }

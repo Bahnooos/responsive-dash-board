@@ -10,7 +10,7 @@ class CustomTextFilled extends StatelessWidget {
       
       decoration: InputDecoration(
         hintText:hint ,
-        hintStyle: AppStyle.styleRegular16.copyWith(color:const Color(0xFFAAAAAA),),
+        hintStyle: AppStyle.styleRegular16(context).copyWith(color:const Color(0xFFAAAAAA),),
         fillColor: const Color(0xFFFAFAFA),
         filled: true,
         border: outlineBorder(),

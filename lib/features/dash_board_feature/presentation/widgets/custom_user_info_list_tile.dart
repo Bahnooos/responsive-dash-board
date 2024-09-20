@@ -5,11 +5,9 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/app_style.dart';
 
 class UserInfoListTile extends StatelessWidget {
-  const UserInfoListTile({
-     super.key,
-     required this.userInfoModel});
-  final  UserInfoModel userInfoModel;
-  
+  const UserInfoListTile({super.key, required this.userInfoModel});
+  final UserInfoModel userInfoModel;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,13 +16,21 @@ class UserInfoListTile extends StatelessWidget {
       child: Center(
         child: ListTile(
           leading: SvgPicture.asset(userInfoModel.image),
-          title: Text(
-            userInfoModel.title,
-            style: AppStyle.styleSemiBold16,
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              userInfoModel.title,
+              style: AppStyle.styleSemiBold16(context),
+            ),
           ),
-          subtitle: Text(
-            userInfoModel.subtitle,
-            style: AppStyle.styleRegular12,
+          subtitle: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              userInfoModel.subtitle,
+              style: AppStyle.styleRegular12(context),
+            ),
           ),
         ),
       ),

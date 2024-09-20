@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,15 +12,24 @@ class AllExpensesItemHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 60,
-          width: 60,
-          padding: const EdgeInsets.all(14),
-          decoration: ShapeDecoration(
-            color: imageBackground ?? const Color(0xFFFAFAFA),
-            shape: const OvalBorder(),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                  color: imageBackground ?? const Color(0xFFFAFAFA),
+                  shape: const OvalBorder(),
+                ),
+                child: Center(
+                    child: SvgPicture.asset(
+                  image,
+                  color: imageColor,
+                )),
+              ),
+            ),
           ),
-          child: SvgPicture.asset(image),
         ),
         const Spacer(),
         Transform.rotate(
